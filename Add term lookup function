@@ -1,0 +1,10 @@
+static TermNode *find_term(SearchEngine *e, const char *word) {
+    TermNode *t;
+
+    for (t = e->index; t; t = t->next) {
+        if (strcmp(t->term, word) == 0)
+            return t;
+    }
+
+    return NULL;
+}
